@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="project.com" method="post" style="background-color: yellow;">
+        <fieldset>
+            <h2><span style="background-color:rgb(0, 183, 255); color:rgb(38, 0, 255)">Đăng ký học viên</span></h2>
+            <p><label for="name">Họ và tên</label>
+                <input type="text" name="name" id="name" required>
+            </p>
+            <p><label for="birthday">Ngày sinh</label>
+                <input type="text" name="birthday" id="birthday" required>
+            </p>
+            <p>Giới tính
+                <input type="radio" name="gender"> Nam
+                <input type="radio" name="gender"> Nữ
+            </p>
+            <p> Địa chỉ
+                <input type="text" required>
+            </p>
+            <p> Lớp
+                <select name="class">
+                    <option value=" ">-chọn lớp-</option>
+                    <option value=" ">-10a3-</option>
+                    <option value=" ">-10b3-</option>
+                </select>
+            </p>
+            <p>Email
+                <input type="email" name="email" required>
+            </p>
+            <p>Điện thoại
+                <input type="number" name="phonenumber" required>
+            <p>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </p>
+        </fieldset>
+    </form>
+</body>
+
+</html>
