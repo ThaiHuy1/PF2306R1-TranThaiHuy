@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <p id="result"></p>
+</head>
+<body>
+    <script>
+        let day;
+        let result = document.getElementById("result");
+        let number = Math.floor(Math.random() *12) + 1;
+        console.log(number);
+        switch (number) {
+            case 1: 
+               day= 'jan';
+                break;
+            case 2:
+               day= 'feb';
+                break;
+            case 3:
+               day= 'mar';
+                break;
+            case 4:
+               day= 'apr';
+                break;
+            case 5:
+               day= 'may';
+                break;
+            case 6:
+               day= 'jun';
+                break;
+            case 7:
+               day= 'jul';
+                break;
+            case 8:
+               day= 'aug';
+                break;
+            case 9:
+               day= 'sep';
+                break;
+            case 10:
+               day= 'oct';
+                break;
+            case 11:
+               day= 'nov';
+                break;
+            case 12:
+               day= 'dec';
+               break;
+            
+        } result.innerHTML = day;
+    </script>
+</body>
+</html>

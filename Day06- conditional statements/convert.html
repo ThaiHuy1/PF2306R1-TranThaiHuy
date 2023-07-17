@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+        </tr>
+        <tr>
+            <td><input type="Number" onchange="getAmount(this)"></td>
+            <td>
+                <select id="Currency1">
+                    <option value="">Currency</option>
+                    <option value="VietNamdong">VietNamdong</option>
+                    <option value="USD">USD</option>
+                    <option value="Jpy">Jpy</option>
+                </select>
+            </td>
+            <td>
+                <select id="Currency2">
+                    <option value="">Currency</option>
+                    <option value="VietNamdong">VietNamdong</option>
+                    <option value="USD">USD</option>
+                    <option value="Jpy">Jpy</option>
+                </select>
+            </td>
+            <td>
+                <button id="checkBtn">Convert</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="result"></p>
+            </td>
+        </tr>
+        <script>
+            let amount_;
+            let currency1_;
+            let currency2_;
+            let result_;
+            let checkBtn = document.getElementById('checkBtn');
+            let result = document.getElementById('result');
+            function getAmount(obj) {
+                amount_ = Number(obj.value);
+                //console.log(amount_);
+            }
+            let currency1 = document.getElementById("Currency1");
+            currency1.onchange = function (e) {
+                currency1_ = e.target.value;
+                switch (currency1_) {
+                    case "VietNamdong":
+                        currency1_ = 1;
+                        break;
+                    case "USD":
+                        currency1_ = 23000;
+                        break;
+                    case "Jpy":
+                        currency1_ = 170;
+                        break;
+                }
+                //console.log(currency1_);
+            }
+            let currency2 = document.getElementById("Currency2");
+            currency2.onchange = function (e) {
+                currency2_ = e.target.value;
+                switch (currency2_) {
+                    case "VietNamdong":
+                        currency2_ = 1;
+                        break;
+                    case "USD":
+                        currency2_ = 23000;
+                        break;
+                    case "Jpy":
+                        currency2_ = 170;
+                        break;
+                }
+                //console.log(currency2_);
+            }
+            checkBtn.addEventListener("click", function () {
+                result_ = amount_ * currency1_ / currency2_
+                //console.log(result_)
+                result.innerText = "Result: " + result_
+            })
+        </script>
+    </table>
+
+</body>
+
+</html>

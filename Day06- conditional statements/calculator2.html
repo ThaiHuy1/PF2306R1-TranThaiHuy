@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="displayBox" disabled>
+        <div>
+            <table>
+                <tr>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="1">1</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="2">2</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="3">3</button></td>
+                    <td><button class="operator" onclick="addOperator('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="4">4</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="5">5</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="6">6</button></td>
+                    <td><button class="operator" onclick="addOperator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="7">7</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="8">8</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="9">9</button></td>
+                    <td><button class="operator" onclick="addOperator('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="operator" onclick="clearDisplay()">C</button></td>
+                    <td><button class="number-buttons" onclick="addNumber(this)" value="0">0</button></td>
+                    <td><button class="operator" onclick="equal()">=</button></td>
+                    <td><button class="operator" onclick="addOperator('/')">/</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        let firstNumber;
+        let secondNumber;
+        let result;
+        let operator;
+        let temp = '';
+        let displayText;
+        let checkBtn = document.getElementById('checkBtn');
+        let displayBox = document.getElementById('displayBox');
+        function addNumber(obj) {
+            let num = obj.value;
+            temp += num;
+            displayBox.value = temp;
+        }
+        function clearDisplay(obj) {
+            displayBox.value = "";
+            temp = "";
+        }
+        function addOperator(op) {
+            if (temp.length > 0) {
+                firstNumber = Number(temp);
+                temp = "";
+                console.log(firstNumber);
+            }
+            operator = op;
+        }
+        function equal() {
+            if (temp.length == 0) {
+                displayBox.value = firstNumber;
+            }else {
+                secondNumber = Number(temp);
+                switch (operator){
+                    case "+": displayBox.value = firstNumber + secondNumber;break;
+                    case "-": displayBox.value = firstNumber - secondNumber;break;
+                    case "*": displayBox.value = firstNumber * secondNumber;break;
+                    case "/": displayBox.value = firstNumber / secondNumber;break;
+                    default: break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

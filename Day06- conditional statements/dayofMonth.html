@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" onchange="checkDay(this)">
+    <button id="clickBtn">Xem ngày</button>
+    <p id="result"></p>
+    <script>
+        let checkBtn = document.getElementById("clickBtn");
+        let result = document.getElementById("result");
+        let dayofMonth
+        let day_
+        function checkDay(obj) {
+            dayofMonth = parseInt(obj.value);
+            checkBtn.addEventListener("click", function () {
+                switch (dayofMonth) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        day_ = '31 ngày';
+                        break;
+                    case 2:
+                        day_ = "28 hoặc 29 ngày";
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        day_ = '30 ngày';
+                        break;
+                    default:
+                        day_ = 0;
+                        break;
+                } 
+                if (day_) {result.innerText = "Tháng" + " " + dayofMonth + " " + 'có' + " " + day_}
+                else {result.innerText ="không xác định được"}
+            }
+            
+            )
+        }
+
+    </script>
+</body>
+
+</html>

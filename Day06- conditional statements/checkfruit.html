@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="fruit" onchange="getValue(this)"></input>
+    <button id="checkBtn">Xem giá</button>
+    <p id="result"></p>
+    <script>
+        let checkBtn = document.getElementById("checkBtn");
+        let result = document.getElementById('result');
+        function getValue(obj) {
+            fruit = obj.value;
+            checkBtn.addEventListener("click", function () {
+                let price;
+                switch (fruit) {
+                    case 'Ổi':
+                        price = 20000 + 'VND';
+                        break;
+                    case 'Dưa Hấu':
+                        price = 20000 + 'VND';
+                        break;
+                    case 'Táo':
+                        price = 30000 + 'VND';
+                        break;
+                    case 'Xoài':
+                        price = 30000 + 'VND';
+                        break;
+                    case 'Cam':
+                        price = 40000 + 'VND';
+                        break;
+                    case 'Măng Cụt':
+                        price = 50000 + 'VND';
+                    default:
+                        price = "I don't have this fruit"
+                } result.innerText = 'Price of fruit:' + " " + price;
+            })
+        }
+    </script>
+</body>
+
+</html>

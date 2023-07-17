@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element interact by id</title>
+</head>
+
+<body>
+    <input type="number" name="number" onchange="getNumber(this)" id="numberInput" placeholder="please enter an integ">
+    <br><br>
+    <button>check!</button>
+    <p id="result"></p>
+    <script>
+        let number;
+        function getNumber(obj) {
+            number = obj.value;
+            if (number % 2 == 0) {
+                alert(number + "is even");
+            } else {
+                alert(number + "is odd");
+            }
+        }
+        let numberInput = document.getElementById("numberInput");
+        numberInput.addEventListener("change", function () {
+            number = numberInput.value;
+
+        })
+
+    </script>
+
+</body>
+
+</html>

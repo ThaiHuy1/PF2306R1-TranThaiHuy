@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" onchange="number1(this)">
+    <input type="number" onchange="number2(this)">
+    <br>
+    <br>
+    <button onclick="Addition()">Addition(+)</button>
+    <button onclick="Subtraction()">Subtraction(-)</button>
+    <button onclick="Multiplication()">Multiplication(x)</button>
+    <button onclick="Division()">Division(/)</button>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById("result");
+        let number_1
+        let number_2
+        function number1(obj) {
+            number_1 = parseInt(obj.value)
+        }
+        function number2(obj) {
+            number_2 = parseInt(obj.value)
+        }
+        function Addition() {
+            result.innerText = "Result Addition" + (number_1 + number_2)
+        }
+        function Subtraction() { 
+            result.innerText = "Result Subtraction" + (number_1 - number_2)
+        }
+        function Multiplication() {
+            result.innerText = "Result Multiplications" + (number_1 * number_2)
+        }
+        function Division() {
+            result.innerText = "Result Division" + (number_1 / number_2)
+        }
+    </script>
+</body>
+
+</html>
